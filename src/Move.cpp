@@ -2,10 +2,14 @@
 #include <ctime>
 #include <cstdlib>
 
+
 Move::Move()
 {
+    if(myMacro == NULL)
+        myMacro = new MacroCommand;
     x = 0;
     y = 0;
+    myMacro->add(this);
 }
 
 void Move::execute(Character& c)
