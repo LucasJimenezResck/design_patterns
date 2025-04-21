@@ -1,8 +1,9 @@
 
-#include <iostream>
-#include <vector>
 
+#include "../include/Move.h"
 
+//Aufgabe in Tutorium SWE2, danach bearbeiten
+#if 0
 //Goal: make class Banane 
 class Banane;
 
@@ -80,18 +81,24 @@ public:
         std::cout << a << std::endl;
     }
 };
+#endif
 
 
 //Interface, die bekannt ist bei andere
 //Aber was dahinter steht ist versteckt
 int main()
 {
-    Observable observable1;
-    ConcreteObserver observer1;
-    ConcreteObserver observer2;
-    observable1.attach(&observer1);
-    observable1.attach(&observer2);
-    observable1.print42();
-
+    MacroCommand myMacro;
+    Character viki("Victoria");
+    Move* m1 = new Move;
+    Move* m2 = new Move;
+    Move* m3 = new Move;
+    Move* m4 = new Move;
+    myMacro.add(m1);
+    myMacro.add(m2);
+    myMacro.add(m3);
+    myMacro.add(m4);
+    myMacro.execute(viki);
+    myMacro.undo(viki);
     return 0;
 }
