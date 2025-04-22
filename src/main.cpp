@@ -1,4 +1,7 @@
 #include <iostream>
+//Fully implemented patterns:
+//Command
+//Singleton
 
 //Aufgabe in Tutorium SWE2, danach bearbeiten
 #if 0
@@ -83,6 +86,5 @@ public:
 
 int main()
 {
-
     return 0;
 }
