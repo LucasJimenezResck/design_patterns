@@ -1,7 +1,12 @@
-#include <iostream>
+#include <string>
+#include "../include/Plane.h"
+#include "../include/Boat.h"
 //Fully implemented patterns:
 //Command
 //Singleton
+
+//Shared pointer dynamically allocates the memory and then frees the space to avoid memory leaks
+
 
 //Aufgabe in Tutorium SWE2, danach bearbeiten
 #if 0
@@ -84,7 +89,12 @@ public:
 };
 #endif
 
+//Factory method is a generalized way to create instances from an object and hides
+//implementation details from derived classes
+//Creational design pattern
 int main()
 {
+    std::shared_ptr<IGameObject> mObject = MakeGameObjectFactory(ObjectType::PLANE);
+    std::shared_ptr<IGameObject> mObject2 = MakeGameObjectFactory(ObjectType::BOAT);
     return 0;
 }
