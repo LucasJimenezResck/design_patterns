@@ -2,6 +2,7 @@
 //Fully implemented patterns:
 //Command
 //Singleton
+//Factory (simple version)
 
 //Aufgabe in Tutorium SWE2, danach bearbeiten
 #if 0
