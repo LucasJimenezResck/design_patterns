@@ -1,5 +1,4 @@
 #include <string>
-
 #include "../include/FactoryGameObject.h"
 //Fully implemented patterns:
 //Command
@@ -94,7 +93,11 @@ public:
 //Creational design pattern
 int main()
 {
-    std::shared_ptr<IGameObject> mObject = FactoryGameObject::CreateObject(ObjectType::PLANE);
-    std::shared_ptr<IGameObject> mObject2 = FactoryGameObject::CreateObject(ObjectType::BOAT);
+    std::shared_ptr<IGameObject> mObject = FactoryGameObject::getInstance()->CreateObject(ObjectType::PLANE);
+    std::shared_ptr<IGameObject> mObject2 = FactoryGameObject::getInstance()->CreateObject(ObjectType::PLANE);
+    std::shared_ptr<IGameObject> mObject3 = FactoryGameObject::getInstance()->CreateObject(ObjectType::PLANE);
+    FactoryGameObject::PrintCounts();
+
+    FactoryGameObject::getInstance()->DestroyFactory();
     return 0;
 }
