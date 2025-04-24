@@ -6,7 +6,7 @@ enable_testing()
 add_executable(design_patterns src/main.cpp
     src/Boat.cpp
     src/Plane.cpp
-    src/IGameObject.cpp
+    src/FactoryGameObject.cpp
 )
 include_directories(include)
 set_property(TARGET design_patterns PROPERTY CXX_STANDARD 17)

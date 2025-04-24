@@ -11,4 +11,4 @@ public:
 
 enum class ObjectType {PLANE, BOAT};
 
-std::shared_ptr<IGameObject> MakeGameObjectFactory(ObjectType type);
+

@@ -1,6 +1,6 @@
 #include <string>
-#include "../include/Plane.h"
-#include "../include/Boat.h"
+
+#include "../include/FactoryGameObject.h"
 //Fully implemented patterns:
 //Command
 //Singleton
@@ -94,7 +94,7 @@ public:
 //Creational design pattern
 int main()
 {
-    std::shared_ptr<IGameObject> mObject = MakeGameObjectFactory(ObjectType::PLANE);
-    std::shared_ptr<IGameObject> mObject2 = MakeGameObjectFactory(ObjectType::BOAT);
+    std::shared_ptr<IGameObject> mObject = FactoryGameObject::CreateObject(ObjectType::PLANE);
+    std::shared_ptr<IGameObject> mObject2 = FactoryGameObject::CreateObject(ObjectType::BOAT);
     return 0;
 }
