@@ -1,4 +1,7 @@
 #include <iostream>
+//Under implementation:
+//Extended factory
+
 //Fully implemented patterns:
 //Command
 //Singleton
