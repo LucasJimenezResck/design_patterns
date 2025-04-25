@@ -1,41 +1,21 @@
 #include "../include/FactoryGameObject.h"
+//Initialize static variable
+FactoryGameObject::CallBackMap FactoryGameObject::mObjects;
 
-int FactoryGameObject::sPlane= 0;
-int FactoryGameObject::sBoat= 0;
-FactoryGameObject* FactoryGameObject::mInstance = nullptr;
-
-
-std::shared_ptr<IGameObject> FactoryGameObject::CreateObject(ObjectType type)
+void FactoryGameObject::RegisterObject(const std::string& type, CreateObjectCallback cb)
 {
-    if(type == ObjectType::PLANE)
+    mObjects[type] = cb;
+}
+void FactoryGameObject::UnregisterObject(const std::string& type)
+{
+    mObjects.erase(type);
+}
+IGameObject* FactoryGameObject::CreateSingleObject(std::string& type)
+{
+    CallBackMap::iterator it = mObjects.find(type);
+    if(it != mObjects.end())
     {
-        sPlane++;
-        return std::make_shared<Plane>();
+        return (it->second)();
     }
-    else if(type == ObjectType::BOAT)
-    {
-        sBoat++;
-        return std::make_shared<Boat>();
-    }
-    
-        return nullptr;
-    
-}
-
-FactoryGameObject* FactoryGameObject::getInstance()
-{
-    if(mInstance == nullptr)
-        return new FactoryGameObject;
-    return mInstance;
-}
-
-void FactoryGameObject::DestroyFactory()
-{
-    delete mInstance;
-}
-
-void FactoryGameObject::PrintCounts()
-{
-    std::cout << "Planes created: " << sPlane << std::endl;
-    std::cout << "Boats created: " << sBoat << std::endl;
+    return nullptr;
 }

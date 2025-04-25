@@ -1,20 +1,21 @@
+#pragma once
 #include "IGameObject.h"
 #include "Boat.h"
 #include "Plane.h"
+#include "Ant.h"
+#include <map>
 
 //added Singleton implementation to this class so there can be only one Factory
 class FactoryGameObject
 {
+    typedef IGameObject *(*CreateObjectCallback)();
 public:
-    static std::shared_ptr<IGameObject> CreateObject(ObjectType type);
-    static void PrintCounts();
-    static FactoryGameObject* getInstance();
-    void DestroyFactory();
+    static void RegisterObject(const std::string& type, CreateObjectCallback cb);
+    static void UnregisterObject(const std::string& type);
+    static IGameObject* CreateSingleObject(std::string& type);
+    
 private:
-    FactoryGameObject() {}
-    ~FactoryGameObject() {}
-    FactoryGameObject(const FactoryGameObject& obj) {}
-    static int sPlane;
-    static int sBoat;
-    static FactoryGameObject* mInstance;
+    //Map made easier to type out
+    typedef std::map<std::string, CreateObjectCallback> CallBackMap;
+    static CallBackMap mObjects;
 };

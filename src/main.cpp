@@ -1,5 +1,7 @@
 #include <string>
 #include "../include/FactoryGameObject.h"
+#include <fstream>
+#include <vector>
 //Fully implemented patterns:
 //Command
 //Singleton
@@ -93,6 +95,22 @@ public:
 //Creational design pattern
 int main()
 {
+    FactoryGameObject::RegisterObject("plane", Plane::Create);
+    FactoryGameObject::RegisterObject("boat", Boat::Create);
+    FactoryGameObject::RegisterObject("ant", Ant::Create);
+
+    std::vector<IGameObject*> gameObjectCollection; 
+    std::string line;
+    std::ifstream myFile("level.txt");
+
+    if(myFile.is_open())
+    {
+        while(std::getline(myFile, line))
+        {
+            IGameObject* object = FactoryGameObject::CreateSingleObject(line);
+            gameObjectCollection.push_back(object);
+        }
+    }
     
     return 0;
 }
