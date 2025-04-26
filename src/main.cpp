@@ -1,6 +1,6 @@
 #include <iostream>
 //Under implementation:
-//Observer
+//Observer (basic structure completed)
 
 //Fully implemented patterns:
 //Command
