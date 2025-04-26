@@ -1,12 +1,13 @@
 #include <iostream>
 //Under implementation:
-//Iterator
+//Observer
 
 //Fully implemented patterns:
 //Command
 //Singleton
 //Factory using a singleton class
 //Extended factory
+//Iterator
 
 //Aufgabe in Tutorium SWE2, danach bearbeiten
 #if 0
