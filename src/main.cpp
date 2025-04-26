@@ -1,5 +1,6 @@
 #include <iostream>
-#include "../include/Subject.h"
+#include "../include/ConcreteSubject.h"
+#include "../include/ConcreteObserver.h"
 //Fully implemented patterns:
 //Command
 //Singleton
@@ -8,9 +9,9 @@
 
 int main()
 {
-    Subject subject;
-    Observer obs1("Lucas");
-    Observer obs2("Sofi");
+    ConcreteSubject subject;
+    ConcreteObserver obs1("Lucas");
+    ConcreteObserver obs2("Sofi");
 
     subject.AddObserver(&obs1);
     subject.AddObserver(&obs2);

@@ -4,9 +4,10 @@
 class Subject
 {
 public:
-    void AddObserver(Observer* observer);
-    void RemoveObserver(Observer* observer);
-    void Notify();
+    virtual void AddObserver(Observer* observer) = 0;
+    virtual void RemoveObserver(Observer* observer) = 0;
+    virtual void Notify() = 0;
+    virtual ~Subject() {}
 private:
     std::forward_list<Observer*> mObservers;
 };

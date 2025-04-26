@@ -1,15 +1,15 @@
-#include "../include/Subject.h"
+#include "../include/ConcreteSubject.h"
 
-void Subject::AddObserver(Observer* observer)
+void ConcreteSubject::AddObserver(Observer* observer)
 {
     //Instead of push back: similar to stack where last element is the first to be called
     mObservers.push_front(observer);
 }
-void Subject::RemoveObserver(Observer* observer)
+void ConcreteSubject::RemoveObserver(Observer* observer)
 {
     mObservers.remove(observer);
 }
-void Subject::Notify()
+void ConcreteSubject::Notify()
 {
     for(const auto& o: mObservers)
     {

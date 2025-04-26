@@ -7,8 +7,6 @@
 class Observer
 {
 public:
-    Observer(std::string mName);
-    void OnNotify(); //Reaction to the notification done by the Subject
-private:
-    std::string name;
+    virtual ~Observer() {} //Useful for creation of other eventual observers
+    virtual void OnNotify() = 0; //Reaction to the notification done by the Subject   
 };
