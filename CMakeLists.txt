@@ -7,6 +7,7 @@ add_executable(design_patterns src/main.cpp
     src/Boat.cpp
     src/Plane.cpp
     src/FactoryGameObject.cpp
+    src/Ant.cpp
 )
 include_directories(include)
 set_property(TARGET design_patterns PROPERTY CXX_STANDARD 17)
