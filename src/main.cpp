@@ -1,6 +1,6 @@
 #include <iostream>
 //Under implementation:
-//Observer (Inheritance added for extensibility)
+//Observer (Inheritance added for extensibility and more flexible to out-of-scope declarations)
 
 //Fully implemented patterns:
 //Command
