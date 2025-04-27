@@ -1,10 +1,15 @@
 #include "../include/ConcreteObserver.h"
 
-ConcreteObserver::ConcreteObserver(const std::string& mName) : name(mName)
+ConcreteObserver::ConcreteObserver(Subject& subject, const std::string& name) : mName(name), mSubject(subject)
 {
+    mSubject.AddObserver(this);
+}
 
+ConcreteObserver::~ConcreteObserver()
+{
+    mSubject.RemoveObserver(this);
 }
 void ConcreteObserver::OnNotify()
 {
-    std::cout <<name << " says: Hello Viki" << std::endl;
+    std::cout <<mName << " says: Hello Viki" << std::endl;
 }
