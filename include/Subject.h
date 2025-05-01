@@ -6,6 +6,9 @@
 
 //There will now be many types of observer with their own features, and to keep track of them new 
 //attributes need to be added
+//Possible small improvements to the code may include using smart pointers instead of raw pointers
+//or other data structures like vectors to accelerate traversion
+//There is also linked implementation to avoid dynamic allocation
 typedef enum {PLAYSOUND, HANDLEPHYSICS, LOG} MessageType;
 class Subject
 {
