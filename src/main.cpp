@@ -1,7 +1,6 @@
 #include <iostream>
 //Under implementation:
-//Observer (Inheritance added for extensibility and more flexible to out-of-scope declarations)
-    //Different observer types are supported
+//Visitor
 
 //Fully implemented patterns:
 //Command
@@ -9,6 +8,7 @@
 //Factory using a singleton class
 //Extended factory
 //Iterator
+//Observer (with a little room for expansion)
 
 //Aufgabe in Tutorium SWE2, danach bearbeiten
 #if 0
