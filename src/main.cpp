@@ -1,6 +1,6 @@
 #include <iostream>
 //Under implementation:
-//Visitor
+//Visitor (basic structure defined, pattern to be developed)
 
 //Fully implemented patterns:
 //Command
