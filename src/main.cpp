@@ -1,5 +1,6 @@
 #include "../include/Goblin.h"
 #include "../include/Orc.h"
+#include "../include/DrawMonsterVisitor.h"
 //Under implementation:
 //Visitor
 
@@ -16,9 +17,12 @@
 //In this case it will be implemented to manage the attributes of different types of enemies inside
 //a game
 
+//Visitor pattern is great for extensibility because it is closed to modification but open for
+//expansion. We don't need to change the class Monster, just the visitor
 int main()
 {
-    //Test monster creation in main
+    //Test monster creation in main (now not used anymore)
+#if 0
     std::vector<Monster*> monsters;
 
     monsters.push_back(new Goblin);
@@ -28,5 +32,14 @@ int main()
     {
         e->scream();
     }
+#endif
+    Orc myOrc1;
+    Goblin myGoblin1;
+    DrawMonsterVisitor dmv;
+    myGoblin1.accept(dmv);
+    myOrc1.accept(dmv);
+
+    dmv.drawAllMonsters();
+    dmv.drawAllMonsters();
     return 0;
 }

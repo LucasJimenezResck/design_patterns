@@ -1,8 +1,11 @@
 #pragma once
 #include "Monster.h"
+#include "MonsterVisitor.h"
+
 
 class Orc : public Monster
 {
 public:
-virtual void scream();
+    Orc(){isAccepted = false; std::cout << "Orc created" <<std::endl;}
+    virtual void accept(MonsterVisitor& visitor);
 };

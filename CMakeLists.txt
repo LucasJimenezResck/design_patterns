@@ -6,6 +6,8 @@ enable_testing()
 add_executable(design_patterns src/main.cpp
 src/Orc.cpp
 src/Goblin.cpp
+src/MonsterVisitor.cpp
+src/DrawMonsterVisitor.cpp
 )
 include_directories(include)
 set_property(TARGET design_patterns PROPERTY CXX_STANDARD 17)

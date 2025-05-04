@@ -1,6 +1,11 @@
 #include "../include/Orc.h"
 
-void Orc::scream()
+void Orc::accept(MonsterVisitor& visitor)
 {
-    std::cout << "Orc scream" << std::endl;
+    if(!isAccepted)
+    {
+    std::cout << "Orc accepts" << std::endl;
+    visitor.visit(*this);
+    }
+    isAccepted = true;
 }

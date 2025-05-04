@@ -1,9 +1,13 @@
 #pragma once
 #include <iostream>
 #include <vector>
-
+#include "MonsterVisitor.h"
+class MonsterVisitor;
 class Monster
 {
+protected:
+    bool isAccepted;
 public:
-    virtual void scream() = 0;
+    virtual ~Monster() = default;
+    virtual void accept(MonsterVisitor& visitor) = 0;
 };
