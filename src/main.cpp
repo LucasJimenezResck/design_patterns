@@ -1,5 +1,6 @@
 #include <iostream>
 //Under implementation:
+//Strategy
 
 //Fully implemented patterns:
 //Command
@@ -8,7 +9,7 @@
 //Extended factory
 //Iterator
 //Observer (with a little room for expansion)
-//Visitor (with doubts about the method drawAllMonsters, originally thought of as a separate function outside Visitor class)
+//Visitor
 
 //Aufgabe in Tutorium SWE2, danach bearbeiten
 #if 0
