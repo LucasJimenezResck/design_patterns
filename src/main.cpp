@@ -19,6 +19,17 @@
 
 //Visitor pattern is great for extensibility because it is closed to modification but open for
 //expansion. We don't need to change the class Monster, just the visitor
+
+void drawAllMonsters(const std::vector<Monster*>& mMonsters)
+{
+    std::cout << std::endl;
+    std::cout << "Drawing all Monsters:" << std::endl;
+    for(const auto& m : mMonsters)
+    {
+        m->accept(DrawMonsterVisitor{});
+    }
+}
+
 int main()
 {
     //Test monster creation in main (now not used anymore)
@@ -33,13 +44,16 @@ int main()
         e->scream();
     }
 #endif
+    std::vector<Monster*> MonsterList;
     Orc myOrc1;
     Goblin myGoblin1;
+    MonsterList.push_back(&myGoblin1);
+    MonsterList.push_back(&myOrc1);
     DrawMonsterVisitor dmv;
     myGoblin1.accept(dmv);
     myOrc1.accept(dmv);
 
-    dmv.drawAllMonsters();
-    dmv.drawAllMonsters();
+    drawAllMonsters(MonsterList);
+    
     return 0;
 }

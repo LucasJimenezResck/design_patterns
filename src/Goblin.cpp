@@ -1,11 +1,11 @@
 #include "../include/Goblin.h"
 
-void Goblin::accept(MonsterVisitor& visitor)
+void Goblin::accept(const MonsterVisitor& visitor)
 {
-    if(!isAccepted)
-    {
+    
+    
         std::cout << "Goblin accepts" << std::endl;
         visitor.visit(*this);
-    }
+    
     isAccepted = true;
 }

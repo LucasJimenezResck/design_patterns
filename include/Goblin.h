@@ -6,5 +6,5 @@ class Goblin : public Monster
 {
 public:
     Goblin(){isAccepted = false; std::cout << "Goblin created" <<std::endl;}
-    virtual void accept(MonsterVisitor& visitor);
+    virtual void accept(const MonsterVisitor& visitor);
 };

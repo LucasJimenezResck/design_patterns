@@ -1,11 +1,10 @@
 #include "../include/Orc.h"
 
-void Orc::accept(MonsterVisitor& visitor)
+void Orc::accept(const MonsterVisitor& visitor)
 {
-    if(!isAccepted)
-    {
+
     std::cout << "Orc accepts" << std::endl;
     visitor.visit(*this);
-    }
+    
     isAccepted = true;
 }

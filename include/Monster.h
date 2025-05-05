@@ -9,5 +9,5 @@ protected:
     bool isAccepted;
 public:
     virtual ~Monster() = default;
-    virtual void accept(MonsterVisitor& visitor) = 0;
+    virtual void accept(const MonsterVisitor& visitor) = 0;
 };
